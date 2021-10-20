@@ -1,0 +1,22 @@
+diff --git a/src/SignalR/clients/ts/FunctionalTests/scripts/run-tests.ts b/src/SignalR/clients/ts/FunctionalTests/scripts/run-tests.ts
+index c955858c9e..5f6701aef4 100644
+--- a/src/SignalR/clients/ts/FunctionalTests/scripts/run-tests.ts
++++ b/src/SignalR/clients/ts/FunctionalTests/scripts/run-tests.ts
+@@ -235,7 +235,7 @@ function runJest(httpsUrl: string, httpUrl: string) {
+         const serverPath = path.resolve(ARTIFACTS_DIR, "bin", "SignalR.Client.FunctionalTestApp", configuration, "net7.0", "SignalR.Client.FunctionalTestApp.dll");
+ 
+         debug(`Launching Functional Test Server: ${serverPath}`);
+-        let desiredServerUrl = "https://127.0.0.1:0;http://127.0.0.1:0";
++        let desiredServerUrl = "https://127.0.0.1:9001;http://127.0.0.1:9000";
+ 
+         if (sauce) {
+             // SauceLabs can only proxy certain ports for Edge and Safari.
+@@ -285,6 +285,8 @@ function runJest(httpsUrl: string, httpUrl: string) {
+         }
+ 
+         debug(`Functional Test Server has started at ${httpsUrl} and ${httpUrl}`);
++        httpUrl = 'http://127.0.0.1:9002';
++        httpsUrl = 'https://127.0.0.1:9003';
+ 
+         // Start karma server
+         const conf = {
