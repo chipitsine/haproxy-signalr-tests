@@ -14,4 +14,4 @@ eng/build.sh
 source activate.sh
 cd src/SignalR/clients/ts/FunctionalTests
 dotnet build SignalR.Npm.FunctionalTests.npmproj
-npm run test:inner || cat /root/.npm/_logs/*-debug.log
+npm run test:inner
